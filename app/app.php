@@ -14,13 +14,13 @@
     $app->register(new Silex\Provider\TwigServiceProvider(), ['twig.path' => __DIR__.'/../views']);
 
     $app->get("/", function() use($app) {
-        
+
         return $app["twig"]->render("homepage.html.twig");
     });
 
     $app->post('/playersubmit', function() use ($app){
-        $input1 = $_POST['input1'];
-        $input2 = $_POST['input2'];
+        $input1 = strtolower($_POST['input1']);
+        $input2 = strtolower($_POST['input2']);
         $newRockPaperScissors = new RockPaperScissors;
 
         $results = $newRockPaperScissors->play_game($input1, $input2);
