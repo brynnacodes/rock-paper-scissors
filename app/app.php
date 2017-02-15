@@ -8,21 +8,24 @@
         $_SESSION['list_of_games'] = array();
     }
 
+    $app["debug"] = true;
+
     $app = new Silex\Application();
     $app->register(new Silex\Provider\TwigServiceProvider(), ['twig.path' => __DIR__.'/../views']);
 
     $app->get("/", function() use($app) {
+        
         return $app["twig"]->render("homepage.html.twig");
     });
 
-    $app->post('/player1submit', function() use ($app){
+    $app->post('/playersubmit', function() use ($app){
+        $input1 = $_POST['input1'];
+        $input2 = $_POST['input2'];
         $newRockPaperScissors = new RockPaperScissors;
-        $input1 = $_POST('input1');
-        $newRockPaperScissors->save();
 
-        return $app['twig']->render('homepage.html.twig');
+        $results = $newRockPaperScissors->play_game($input1, $input2);
+        return $app['twig']->render('game_results.html.twig', array("results" => $results));
     });
-
     return $app;
 
 ?>
