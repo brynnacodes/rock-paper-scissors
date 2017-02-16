@@ -4,14 +4,15 @@
         <meta charset="utf-8">
         <title>Rock Paper Scissors?</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="/styles.css" media="screen" title="no title" charset="utf-8">
     </head>
     <body>
         <div class="container">
             <h1>Let's play Battle Royale!</h1>
             <div id="gameform1">
                 <form class="input-submitter" action="/playersubmit" method="post">
-                    <input type="text" name="input1" placeholder="Brynna, Keith, Katie, Clayton, Sean, Jennifer">
-                    <input type="text" name="input2" placeholder="Brynna, Keith, Katie, Clayton, Sean, Jennifer">
+                    <input class="input-group" type="text" name="input1" placeholder="Choose your player Brynna, Keith, Katie, Clayton, Sean, or Jennifer...">
+                    <input class="input-group" type="text" name="input2" placeholder="Choose your challenger Brynna, Keith, Katie, Clayton, Sean, or Jennifer...">
                     <button type="submit" name="button">Fight.</button>
                 </form>
             </div>

@@ -6,10 +6,18 @@
     </head>
     <body>
         <h1>The winner is:</h1>
-        <div>
-
+        <div class="container">
+            <img src="img/hungergames.gif" alt="" />
             <h2>{{ results }}</h2>
             <a href="/"><button>Play again!</button></a>
+
+            <h1>Add Insult to Injury!</h1>
+            <form action="/insult_injury" method="post">
+                <input type="text" name="subject" placeholder="Enter a sentence">
+                <input type="text" name="find" placeholder="Find word">
+                <input type="text" name="replace" placeholder="Replace word">
+                <button type="submit">Insult away</button>
+            </form>
 
         </div>
     </body>

@@ -26,6 +26,22 @@
         $results = $newRockPaperScissors->play_game($input1, $input2);
         return $app['twig']->render('game_results.html.twig', array("results" => $results));
     });
+
+    $app->post('/insult_injury', function() use($app) {
+
+        $find = strtolower($_POST['find']);
+        $replace = strtolower($_POST['replace']);
+        $subject = strtolower($_POST['subject']);
+        $newRockPaperScissors = new RockPaperScissors;
+
+        $results = $newRockPaperScissors->str_replace_json($find, $replace, $subject);
+        return $app['twig']->render("insult_injury.html.twig", array('results' => $results));
+    });
+
+    $app->post('/return', function() use ($app) {
+        return $app['twig']->render('game_results.html.twig');
+    });
+
     return $app;
 
 ?>

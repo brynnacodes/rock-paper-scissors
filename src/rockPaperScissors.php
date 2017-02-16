@@ -80,6 +80,11 @@
                 }
             }
         }
+
+        function str_replace_json($search, $replace, $subject)
+        {
+            return json_decode(str_replace($search, $replace, json_encode($subject)));
+        }
     }
 
 
